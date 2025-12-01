@@ -15,7 +15,7 @@ def test_mapping_parser():
     print("TEST 1: Mapping Parser")
     print("="*60)
     
-    parser = MappingParser('IB_to_NewDSR_Mapping.md')
+    parser = MappingParser('IB_to_DSR_Mapping.md')
     mapping = parser.parse_mapping_file()
     
     print(f"✓ Mapping file parsed successfully")
@@ -44,7 +44,7 @@ def test_template_placeholders():
     print("TEST 2: Template Placeholders")
     print("="*60)
     
-    doc = Document('new_DSR_template.docx')
+    doc = Document('DSR_template.docx')
     
     # Find all placeholders in document
     placeholders = set()
@@ -248,4 +248,5 @@ if __name__ == '__main__':
     import sys
     success = main()
     sys.exit(0 if success else 1)
+
 

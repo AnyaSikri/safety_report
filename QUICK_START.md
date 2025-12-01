@@ -22,8 +22,8 @@ export OPENAI_API_KEY=sk-your-api-key-here
 # 3. Run the pipeline
 python main.py \
   --ib-pdf investigative_brochure.pdf \
-  --template new_DSR_template.docx \
-  --mapping IB_to_NewDSR_Mapping.md \
+  --template DSR_template.docx \
+  --mapping IB_to_DSR_Mapping.md \
   --output data/output/DSR_Populated.docx
 ```
 
@@ -170,11 +170,11 @@ python main.py --force-reindex [other args...]
 
 | File | Purpose |
 |------|---------|
-| `IB_to_NewDSR_Mapping.md` | **Comprehensive mapping** (114 fields) |
-| `new_DSR_template.docx` | **Target template** with placeholders |
-| `NEW_TEMPLATE_GUIDE.md` | **Detailed guide** with all info |
+| `IB_to_DSR_Mapping.md` | **Comprehensive mapping** (114 fields) |
+| `DSR_template.docx` | **Target template** with placeholders |
+| `GUIDE.md` | **Detailed guide** with all info |
 | `main.py` | **Main script** to run pipeline |
-| `test_new_template.py` | **Test script** to validate setup |
+| `test.py` | **Test script** to validate setup |
 
 ---
 
@@ -183,7 +183,7 @@ python main.py --force-reindex [other args...]
 Validate everything works:
 
 ```bash
-python test_new_template.py
+python test.py
 ```
 
 Should show:
@@ -197,9 +197,9 @@ Should show:
 
 ## Need Help?
 
-1. **Detailed guide:** See `NEW_TEMPLATE_GUIDE.md`
-2. **Mapping reference:** See `IB_to_NewDSR_Mapping.md`
-3. **Test validation:** Run `python test_new_template.py`
+1. **Detailed guide:** See `GUIDE.md`
+2. **Mapping reference:** See `IB_to_DSR_Mapping.md`
+3. **Test validation:** Run `python test.py`
 4. **Original docs:** See `README_AUTOMATION.md`
 
 ---
@@ -221,6 +221,7 @@ Should show:
 
 *Last Updated: December 2024*  
 *System Version: 2.0*  
-*Template: new_DSR_template.docx (114 fields)*  
+*Template: DSR_template.docx (114 fields)*  
 *IB: Version 10, April 2025*
+
 

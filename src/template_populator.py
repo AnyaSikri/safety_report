@@ -145,7 +145,7 @@ class TemplatePopulator:
     
     def _replace_in_paragraph(self, paragraph, old_text: str, new_text: str) -> int:
         """
-        Replace text in paragraph while preserving formatting
+        Replace text in paragraph while clearing placeholder formatting
         
         Args:
             paragraph: python-docx Paragraph object
@@ -168,6 +168,9 @@ class TemplatePopulator:
             if old_text in run.text:
                 # Placeholder is entirely in this run - simple case
                 run.text = run.text.replace(old_text, new_text, 1)
+                # Clear excessive formatting from the run
+                run.bold = False
+                run.font.size = None  # Reset to default size
                 return 1
         
         # Placeholder might be split across runs
@@ -200,17 +203,23 @@ class TemplatePopulator:
         if start_run_idx == -1 or end_run_idx == -1:
             # Fallback: clear all and replace
             paragraph.clear()
-            paragraph.add_run(new_full_text)
+            new_run = paragraph.add_run(new_full_text)
+            # Ensure no excessive formatting
+            new_run.bold = False
+            new_run.font.size = None  # Reset to default size
             return 1
         
-        # Replace the text while preserving runs outside the placeholder
+        # Replace the text while clearing placeholder formatting
         if start_run_idx == end_run_idx:
             # Placeholder in single run
             run = runs[start_run_idx]
             run.text = run.text.replace(old_text, new_text, 1)
+            # Clear excessive formatting
+            run.bold = False
+            run.font.size = None  # Reset to default size
         else:
             # Placeholder spans multiple runs - merge and replace
-            # Keep the first run's formatting, remove the others
+            # Clear formatting on the run that will contain the replacement
             position_in_text = 0
             for i in range(len(runs)):
                 run_len = len(runs[i].text)
@@ -220,6 +229,9 @@ class TemplatePopulator:
                     # This run starts before or at placeholder
                     start_offset = placeholder_start - position_in_text
                     runs[i].text = runs[i].text[:start_offset] + new_text
+                    # Clear excessive formatting
+                    runs[i].bold = False
+                    runs[i].font.size = None  # Reset to default size
                     position_in_text += run_len
                 elif start_run_idx < i < end_run_idx:
                     # This run is completely within placeholder - clear it

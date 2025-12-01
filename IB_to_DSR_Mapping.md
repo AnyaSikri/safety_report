@@ -1,378 +1,455 @@
-# COMPREHENSIVE MANUAL MAPPING
-## Investigator Brochure (Pralsetinib/RO7499790) → Signal Assessment Report Template
-
-**Document Version:** 1.0  
-**Created:** November 2024  
+# COMPREHENSIVE MAPPING: Investigator Brochure → New DSR Template
+**Document Version:** 2.0  
+**Created:** December 2024  
 **IB Source:** Investigator's Brochure RO7499790 (pralsetinib/GAVRETO), Version 10, April 2025  
-**Template:** Signal Assessment Report Template
+**Template:** New Drug Safety Report Template (new_DSR_template.docx)
 
 ---
 
 ## PURPOSE OF THIS DOCUMENT
 
-This comprehensive mapping identifies which specific sections and pages of the Investigator Brochure (IB) contain the information needed to populate each section of the Signal Assessment Report template. This enables:
-1. Quick location of source content in the IB
-2. Consistent population of signal assessment reports
-3. Automation opportunities for template population
-4. Quality control and validation of completed reports
+This mapping document identifies the specific sections of the Investigator Brochure (IB) that contain information needed to populate each placeholder field in the new DSR template. The mapping enables:
+1. Automated population using AI (OpenAI)
+2. Quick manual lookup of source content
+3. Quality control and validation
+4. Clear identification of fields that cannot be populated from the IB
 
 ---
 
-## TABLE OF CONTENTS
+## MAPPING LEGEND
 
-1. Executive Summary Mapping
-2. Introduction Section Mapping
-3. Background Section Mapping
-4. Review of Data from All Sources Mapping
-5. Literature Review Mapping
-6. Biological Plausibility Mapping
-7. Discussion & Conclusion Mapping
-8. References Mapping
-9. Quick Reference Guide
+**Mapping Types:**
+- **DIRECT_EXTRACT**: Content can be copied directly from IB with minimal modification
+- **AI_SYNTHESIS**: Requires AI to synthesize/summarize content from one or multiple IB sections
+- **UNAVAILABLE**: Cannot be populated from IB; requires external data sources
 
----
-
-# SECTION 1: EXECUTIVE SUMMARY
-
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Rationale for report preparation** | Not in IB | N/A | **Cannot be populated from IB** - This comes from the signal detection source (PRAC request, routine monitoring, etc.) |
-| **Product specific information summary** | Multiple sections | 15-23, 99-107 | **Synthesize from:**<br>• Section 1.1: Product description (p. 15)<br>• Section 1.2: Physical/chemical properties (p. 16-18)<br>• Section 2.3: Mechanism of action summary (p. 23-24)<br>• Section 6.1: Approved indications (p. 99)<br>• Section 1.4.3: Safety summary (p. 22) |
-| **Event of interest description** | Section 6.4 (if event is identified risk) | 101-107 | **Check if event is an identified risk:**<br>• Table 28: Summary of Identified Risks (p. 102-107)<br>• Section 6.3: Warnings and Precautions (p. 100-101)<br>**If not identified:** Cannot populate from IB |
-| **Data sources and methods** | Multiple sections | Various | **List applicable sources from IB:**<br>• Section 4.3: Nonclinical toxicology data (p. 33-45)<br>• Section 5.5: Clinical studies safety (p. 87-99)<br>• Section 5.6: Marketing experience (p. 99)<br>• Note: Safety database analysis not in IB |
-| **Key results summary** | Section 1.4.3, 5.5 | 22, 87-99 | **Extract key findings from:**<br>• Section 1.4.3: Overall safety summary (p. 22)<br>• Tables 23-26: AE summary tables (p. 89-92)<br>• Section 5.5.1.2: ARROW safety results (p. 87-95) |
-| **Conclusion statement** | Section 6.4 | 101-107 | **Extract benefit-risk language from:**<br>• Section 6.4: Risk characterization<br>• Table 28: Risk descriptions |
+**Page Number Format:**
+- Single page: "15"
+- Page range: "23-45"
+- Multiple ranges: "15-18, 23-24, 99"
 
 ---
 
-# SECTION 2: INTRODUCTION
+# SECTION 1: DOCUMENT METADATA AND IDENTIFICATION
 
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Signal source** | Not in IB | N/A | **Cannot be populated from IB**<br>Examples listed in template:<br>• Routine signal detection<br>• PRAC request<br>• PSUR/PBRER signal<br>• Regulatory authority request<br>• Product complaints |
-| **Rationale for evaluation** | Not in IB | N/A | **Cannot be populated from IB** - This is context-specific to why the signal is being investigated |
-
----
-
-# SECTION 3: BACKGROUND - PRODUCT BACKGROUND
-
-## 3.1: Basic Product Information
-
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Product name** | Title page, 1.1 | 1, 15 | **RO7499790 / pralsetinib / GAVRETO**<br>Extract from:<br>• Title page<br>• Section 1.1: Summary of Product Characteristics |
-| **First approval date (IBD)** | Section 1.1 | 15 | **International Birth Date (IBD):** September 4, 2020 (US FDA approval)<br>Located in: Section 1.1 paragraph 2 |
-| **Reference safety document version** | Cover page, header | Throughout | **IB Version 10, dated April 2025**<br>This must be cited in the Signal Assessment Report |
-| **Pharmacology and therapeutic class** | Sections 1.1, 2.1, 2.3 | 15, 23-24 | **Therapeutic class:** Antineoplastic agent, RET kinase inhibitor<br>**Pharmacology:**<br>• Section 1.1: RET inhibitor description<br>• Section 2.1: RET kinase background (p. 23)<br>• Section 2.3: Mechanism of action (p. 23-24) |
-| **Mechanism of action** | Sections 2.3, 4.1.2 | 23-24, 26-29 | **Primary source:** Section 2.3 (p. 23-24)<br>**Detailed pharmacology:** Section 4.1.2: Oncology Studies (p. 26-29)<br>**Key content:** Selective RET kinase inhibitor, inhibits wild-type and mutant RET proteins |
-
-## 3.2: Formulation and Dosing
-
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Available formulations** | Sections 1.2, 3.2.1 | 16-18, 30 | **Section 1.2:** Physical, Chemical, and Pharmaceutical Properties<br>• Capsule formulation details (p. 16-18)<br>**Section 3.2.1:** Formulation description (p. 30) |
-| **Dosing information (summary)** | Section 1.2 | 18-19 | **Section 1.2.3:** Recommended dosing<br>• Standard dose: 400 mg orally once daily<br>• Dose modifications for adverse reactions |
-| **Dosing information (detailed)** | Section 3.2.2 | 30-32 | **Section 3.2.2:** Clinical pharmacology and dosing<br>• Detailed dosing schedules<br>• Dose escalation data<br>• Food effect information |
-
-## 3.3: Indications
-
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Approved indications** | Section 6.1 | 99 | **Section 6.1: Indications for Use**<br>**1. RET fusion-positive NSCLC**<br>• Adult patients<br>• Locally advanced or metastatic<br><br>**2. RET-altered thyroid cancer**<br>• MTC (medullary thyroid cancer)<br>• RET fusion-positive thyroid cancer<br>• Patients ≥12 years of age |
-| **Target population description** | Sections 1.1, 6.1 | 15, 99 | **Patient population:**<br>• Adults with RET fusion-positive NSCLC<br>• Adults and pediatric patients (≥12 years) with RET-altered thyroid cancer<br>• Advanced/metastatic disease requiring systemic therapy |
-
-## 3.4: Patient Exposure
-
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Clinical trial exposure** | Section 5.1 | 46 | **Section 5.1:** Summary of Clinical Studies<br>• Total patients enrolled in clinical trials<br>• Study phases and patient numbers<br>**Key studies:**<br>• ARROW (BLU-667-1101)<br>• MyTACTIC (ML42439) |
-| **Marketing experience** | Section 5.6 | 99 | **Section 5.6:** Marketed Experience<br>• Post-marketing exposure estimates<br>• Geographic distribution of use<br>**Note:** Detailed exposure may come from PBRER Section 5 |
-| **Overall exposure summary** | Sections 5.1, 5.6 | 46, 99 | **Combine data from:**<br>• Clinical development exposure<br>• Post-marketing exposure<br>• Duration of exposure |
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_REPORT_TITLE] | Not in IB | N/A | UNAVAILABLE | **Manual input required**. Format: "Signal Assessment Report: [Event Name] with [Drug Name]" |
+| [INSERT_REPORT_NUMBER] | Not in IB | N/A | UNAVAILABLE | **Internal tracking number** from safety database system |
+| [INSERT_VERSION_NUMBER] | Not in IB | N/A | UNAVAILABLE | **Version of this DSR**, not IB version. Starts at 1.0 |
+| [INSERT_VERSION] | Not in IB | N/A | UNAVAILABLE | Same as INSERT_VERSION_NUMBER |
+| [INSERT_STATUS] | Not in IB | N/A | UNAVAILABLE | **Manual input**: Draft / Final / Approved |
+| [INSERT_DATE] | Not in IB | N/A | UNAVAILABLE | **Report creation date**, not IB date. Use current date |
+| [INSERT_ASSESSMENT_DATE] | Not in IB | N/A | UNAVAILABLE | **Date signal assessment completed**. Use current date |
+| [INSERT_AUTHOR_NAMES] | Not in IB | N/A | UNAVAILABLE | **Name(s) of report author(s)** |
+| [INSERT_REVIEWER_NAMES] | Not in IB | N/A | UNAVAILABLE | **Name(s) of medical reviewer(s)** |
+| [INSERT_CONTRIBUTOR_NAMES] | Not in IB | N/A | UNAVAILABLE | **Names of other contributors** |
+| [INSERT_COMPANY_NAME] | Cover page, throughout | 1 | DIRECT_EXTRACT | **Extract**: "F. Hoffmann-La Roche Ltd" or "Roche" |
+| [INSERT_DEPARTMENT] | Not in IB | N/A | UNAVAILABLE | **Manual input**: e.g., "Drug Safety Department", "Pharmacovigilance" |
 
 ---
 
-# SECTION 4: BACKGROUND - EVENT OF INTEREST
+# SECTION 2: PRODUCT IDENTIFICATION
 
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Case definition of event** | Not in IB | N/A | **Cannot be populated from IB**<br>• Medical definition must come from medical dictionaries, UpToDate, or clinical guidelines<br>• MedDRA Preferred Term definition |
-| **Event in drug class or competitors** | Limited in IB | Various | **Check if mentioned:**<br>• Section 1.1: Class effects (if mentioned)<br>• Section 2.1: Background on RET inhibitors (p. 23)<br>• Literature references (Section 7)<br>**Likely needs external research** |
-| **Epidemiology of event** | Not in IB | N/A | **Cannot be populated from IB**<br>Source from: UpToDate, published literature, epidemiology databases |
-| **Risk factors for event** | Not in IB | N/A | **Cannot be populated from IB**<br>Source from: Clinical guidelines, UpToDate, medical literature |
-| **Diagnosis and treatment** | Not in IB | N/A | **Cannot be populated from IB**<br>Source from: Clinical guidelines, UpToDate |
-
----
-
-# SECTION 5: REVIEW OF DATA FROM ALL SOURCES
-
-## 5.1: Toxicology Data
-
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Nonclinical findings relevant to event** | Section 4.3.3 | 33-45 | **Section 4.3.3:** Specific Toxicology Studies<br>**Subsections to review based on event:**<br>• 4.3.3.1: Hematotoxicity (p. 36-37)<br>• 4.3.3.2: Hepatotoxicity (p. 37-39)<br>• 4.3.3.3: Renal toxicity (p. 39-40)<br>• 4.3.3.4: Reproductive toxicity (p. 40-42)<br>• 4.3.3.5: Genotoxicity (p. 42-43)<br>• 4.3.3.6: Carcinogenicity (p. 43-44)<br>• 4.3.3.7: Other toxicities (p. 44-45) |
-| **Toxicology summary** | Section 4.3.1 | 33-35 | **Section 4.3.1:** Summary of toxicology findings<br>• Key findings across species<br>• Dose-response relationships<br>• Clinical relevance |
-
-## 5.2: Review of Clinical Studies
-
-### Overall Clinical Safety
-
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Overall safety summary** | Section 1.4.3 | 22 | **Section 1.4.3:** Safety Summary<br>• High-level overview of safety profile<br>• Most common adverse reactions<br>• Serious adverse events overview |
-| **Detailed clinical study safety** | Section 5.5 | 87-99 | **Section 5.5:** Safety in Clinical Studies<br>**Primary studies:**<br>• 5.5.1: ARROW study (BLU-667-1101) (p. 87-95)<br>• 5.5.4: MyTACTIC study (ML42439) (p. 96-99) |
-
-### ARROW Study Safety Data (Primary Study)
-
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Study design and population** | Section 5.5.1.1 | 87 | **Section 5.5.1.1:** ARROW Study Design<br>• Phase 1/2, open-label<br>• RET fusion-positive solid tumors<br>• Dose escalation and expansion |
-| **Adverse events overview** | Section 5.5.1.2.1 | 87-88 | **Section 5.5.1.2.1:** Overview of Adverse Events<br>• AE incidence and causality<br>• Dose modifications |
-| **Common adverse events (any grade)** | Table 23 | 89 | **Table 23:** Adverse Events in ≥15% of Patients<br>• Frequency and grading<br>• Treatment-emergent AEs |
-| **Treatment-related adverse events** | Table 24 | 90 | **Table 24:** Treatment-Related Adverse Events<br>• Events considered related to pralsetinib<br>• Frequency by grade |
-| **Severe adverse events (Grade ≥3)** | Table 25 | 91 | **Table 25:** Grade 3 or Higher Adverse Events in ≥2% of Patients<br>• Serious safety events<br>• Dose-limiting toxicities |
-| **Serious adverse events** | Table 26, Section 5.5.1.2.2 | 91-92 | **Table 26:** Serious Adverse Events in ≥1% of Patients<br>**Section 5.5.1.2.2:** Serious adverse events discussion |
-| **Deaths** | Section 5.5.1.2.4 | 91 | **Section 5.5.1.2.4:** Deaths<br>• On-study deaths<br>• Causality assessment |
-| **Adverse events of special interest** | Section 5.5.1.2.3 | 92-95 | **Section 5.5.1.2.3:** Adverse Events of Special Interest<br>**Event-specific sections - map to event being assessed** |
-| **Laboratory abnormalities** | Table 30 | 107 | **Table 30:** Laboratory Abnormalities<br>• Hematology, chemistry findings<br>• Grade 3-4 laboratory changes |
-
-### MyTACTIC Study Safety Data
-
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **MyTACTIC study safety** | Section 5.5.4 | 96-99 | **Section 5.5.4:** MyTACTIC Study Safety<br>• Combination therapy with pembrolizumab<br>• Safety profile in combination<br>• Adverse events and serious events |
-
-### Other Clinical Studies
-
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Other relevant studies** | Section 5.5 subsections | 87-99 | **Review all subsections of 5.5** based on event being assessed |
-
-## 5.3: Review of Safety Database
-
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Safety database search methodology** | Not in IB | N/A | **Cannot be populated from IB**<br>• Search dates<br>• Search terms (MedDRA PTs, HLTs)<br>• Inclusion/exclusion criteria |
-| **Safety database results** | Not in IB | N/A | **Cannot be populated from IB**<br>• Total cases and events<br>• Source stratification (trials, post-marketing)<br>• Seriousness and severity<br>• Most common PTs<br>**Note:** Individual case data comes from safety database, not IB |
-| **Case narratives** | Not in IB | N/A | **Cannot be populated from IB**<br>Individual case narratives for Grade 4-5 events come from safety database |
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_PRODUCT_NAME] | Cover page, Section 1.1 | 1, 15 | DIRECT_EXTRACT | **Extract**: "RO7499790" (compound designation) |
+| [INSERT_DRUG_NAME] | Cover page, Section 1.1 | 1, 15 | DIRECT_EXTRACT | **Extract**: "pralsetinib" (INN) |
+| [INSERT_TRADE_NAME] | Cover page, Section 1.1 | 1, 15 | DIRECT_EXTRACT | **Extract**: "GAVRETO" (trade name) |
+| [INSERT_RO_NUMBER] | Cover page, Section 1.1 | 1, 15 | DIRECT_EXTRACT | **Extract**: "RO7499790" |
+| [INSERT_IBD_DATE] | Section 1.1 | 15 | DIRECT_EXTRACT | **Extract**: "September 4, 2020" (US FDA approval date, International Birth Date) |
+| [INSERT_APPROVAL_DATE] | Section 1.1 | 15 | DIRECT_EXTRACT | Same as IBD_DATE: "September 4, 2020" |
 
 ---
 
-# SECTION 6: LITERATURE REVIEW
+# SECTION 3: REFERENCE DOCUMENTS
 
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Literature search methodology** | Not in IB | N/A | **Cannot be populated from IB**<br>• Databases searched (Medline, Embase)<br>• Search dates and terms<br>• Inclusion/exclusion criteria |
-| **Background incidence rates** | Not in IB | N/A | **Cannot be populated from IB**<br>Requires literature search for epidemiologic data |
-| **Event in same drug class** | Section 7.2, limited | 116-119 | **May find limited info in:**<br>• Section 7.2: Literature References<br>• Check if references discuss class effects<br>**Likely requires new literature search** |
-| **Event in same indication** | Section 7.2, limited | 116-119 | **May find limited info in references**<br>**Likely requires new literature search** |
-| **Relevant publications** | Section 7.2 | 116-119 | **Section 7.2:** Literature References<br>• Review cited publications<br>• May provide starting point for literature review<br>**Note:** Will need current literature search |
-
----
-
-# SECTION 7: REVIEW OF EXTERNAL DATABASES
-
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **External database review** | Not in IB | N/A | **Cannot be populated from IB**<br>Examples of external databases:<br>• WHO VigiBase<br>• EudraVigilance<br>• FAERS (FDA Adverse Event Reporting System)<br>**Requires separate database queries** |
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_IB_VERSION] | Cover page, header | 1 | DIRECT_EXTRACT | **Extract**: "Version 10" or "10" |
+| [INSERT_IB_VERSION_AND_DATE] | Cover page, header | 1 | DIRECT_EXTRACT | **Extract**: "Version 10, April 2025" |
+| [INSERT_IB_REFERENCE] | Cover page | 1 | AI_SYNTHESIS | **Generate proper citation**: "F. Hoffmann-La Roche Ltd. Investigator's Brochure: RO7499790 (pralsetinib/GAVRETO). Version 10. April 2025." |
+| [INSERT_PBRER_REFERENCE] | Not in IB | N/A | UNAVAILABLE | **Requires PBRER document**. Format: "PBRER for RO7499790, [Data Lock Point]" |
+| [INSERT_DATA_LOCK_POINT] | Not in IB | N/A | UNAVAILABLE | **From safety database**, not IB. Format: "DD-MMM-YYYY" |
+| [INSERT_REGULATORY_DOCS] | Section 7.1 | 115-116 | AI_SYNTHESIS | **Synthesize from Section 7.1**: List relevant regulatory documents and submissions mentioned |
 
 ---
 
-# SECTION 8: BIOLOGICAL PLAUSIBILITY
+# SECTION 4: SIGNAL IDENTIFICATION
 
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Mechanism of action** | Sections 2.3, 4.1.2 | 23-24, 26-29 | **Section 2.3:** Mechanism of Action<br>• RET kinase inhibition mechanism<br>• Downstream effects<br>**Section 4.1.2:** Oncology pharmacology<br>• Target selectivity<br>• Cellular effects |
-| **Pharmacologic basis for event** | Multiple sections | Various | **Synthesize from:**<br>• Section 2.3: MOA (p. 23-24)<br>• Section 3.4: Clinical pharmacology (p. 32-33)<br>• Section 4.3.3: Relevant toxicology (p. 33-45)<br>• Section 6.3: Warnings (p. 100-101) if event is identified risk |
-| **Related findings supporting plausibility** | Sections 4.3.3, 5.5 | 33-45, 87-99 | **Nonclinical evidence:**<br>• Relevant toxicology findings<br>**Clinical evidence:**<br>• Related adverse events from clinical trials<br>• Dose-response relationships |
-
----
-
-# SECTION 9: DISCUSSION
-
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Overall discussion** | Limited in IB | N/A | **Cannot be well populated from IB**<br>• IB presents data but not interpretive discussion<br>• Discussion must synthesize findings from all data sources |
-| **Clinical significance** | Section 6.3-6.4 | 100-107 | **Can extract from:**<br>• Section 6.3: Warnings and Precautions<br>• Section 6.4: Identified Risks descriptions<br>• Table 28: Risk characterization |
-| **Strength of evidence** | Not in IB | N/A | **Cannot be populated from IB**<br>Assessment of evidence strength is analysis-specific |
-| **Limitations** | Not in IB | N/A | **Cannot be populated from IB**<br>Limitations are specific to the signal assessment analysis |
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_SIGNAL_ID] | Not in IB | N/A | UNAVAILABLE | **Internal tracking ID** from signal management system |
+| [INSERT_SIGNAL_SOURCE] | Not in IB | N/A | UNAVAILABLE | **Manual input**. Examples: "Routine signal detection", "PRAC request", "Regulatory inquiry" |
+| [INSERT_SIGNAL_SOURCE_DETAIL] | Not in IB | N/A | UNAVAILABLE | **Detailed description** of how signal was identified |
+| [INSERT_ASSESSMENT_RATIONALE] | Not in IB | N/A | UNAVAILABLE | **Why this signal is being assessed**. Context-specific, not in IB |
+| [INSERT_RATIONALE_DESCRIPTION] | Not in IB | N/A | UNAVAILABLE | **Expanded rationale** for signal assessment |
+| [INSERT_EVENT_DESCRIPTION] | Section 6.4, Table 28 (if identified risk) | 102-107 | AI_SYNTHESIS | **IF event is identified risk**: Extract description from Table 28. **IF NOT**: Cannot populate from IB |
+| [INSERT_MEDRA_TERMS] | Not in IB | N/A | UNAVAILABLE | **MedDRA coding** for the event (PT, HLT, HLGT, SOC) |
 
 ---
 
-# SECTION 10: CONCLUSION
+# SECTION 5: EXECUTIVE SUMMARY
 
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Overall conclusion** | Section 1.4.3, 6.4 | 22, 101-107 | **High-level conclusions from:**<br>• Section 1.4.3: Safety summary<br>• Section 6.4: Benefit-risk language |
-| **Signal assessment conclusion** | Not in IB | N/A | **Cannot be populated from IB**<br>• Whether signal is confirmed/refuted<br>• Regulatory action recommendations<br>**These are specific to the signal assessment** |
-
----
-
-# SECTION 11: REFERENCES
-
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **IB as reference** | Cover page | 1 | **Must cite the IB itself:**<br>F. Hoffmann-La Roche Ltd. Investigator's Brochure: RO7499790 (pralsetinib/GAVRETO). Version 10. April 2025. |
-| **Sponsor reports** | Section 7.1 | 115-116 | **Section 7.1:** Sponsor Reports<br>• Clinical study reports<br>• Integrated safety summaries<br>• Regulatory submissions |
-| **Literature references** | Section 7.2 | 116-119 | **Section 7.2:** Literature References<br>• Published studies on pralsetinib<br>• RET kinase literature<br>• Disease background references |
-| **Additional references** | Not in IB | N/A | **Will need to add:**<br>• Literature search results<br>• External database queries<br>• Clinical guidelines<br>• Regulatory guidance documents |
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_PRODUCT_SUMMARY] | Sections 1.1, 1.2, 2.3, 6.1 | 15-24, 99 | AI_SYNTHESIS | **Synthesize from multiple sections**: Product description (1.1), mechanism (2.3), indications (6.1), formulation (1.2). Create 1-2 paragraph summary |
+| [INSERT_KEY_RESULTS_SUMMARY] | Section 1.4.3, Tables 23-26 | 22, 89-92 | AI_SYNTHESIS | **Summarize key safety findings**: Overall safety (1.4.3), common AEs (Table 23), serious AEs (Table 26) |
+| [INSERT_EXECUTIVE_SUMMARY_CONCLUSION] | Section 1.4.3, 6.4 | 22, 102-107 | AI_SYNTHESIS | **High-level conclusion**: Synthesize from safety summary and identified risks section |
+| [INSERT_DATA_SOURCES_SUMMARY] | Sections 4.3, 5.5, 5.6 | 33-45, 87-99 | AI_SYNTHESIS | **Summarize data sources**: Nonclinical (4.3), clinical trials (5.5), post-marketing (5.6) |
 
 ---
 
-# SECTION 12: APPENDICES
+# SECTION 6: BACKGROUND - PRODUCT INFORMATION
 
-| Template Field/Content | IB Source Section | IB Page Numbers | Detailed Mapping Instructions |
-|---|---|---|---|
-| **Supporting tables and figures** | Multiple tables | Throughout | **Relevant IB tables to potentially include:**<br>• Table 23: Common AEs (p. 89)<br>• Table 24: Treatment-related AEs (p. 90)<br>• Table 25: Grade ≥3 AEs (p. 91)<br>• Table 26: Serious AEs (p. 91-92)<br>• Table 28: Identified Risks (p. 102-107)<br>• Table 29: ADR Frequency (p. 105-107)<br>• Table 30: Lab Abnormalities (p. 107)<br>• Tables 31-32: Expected SARs (p. 108-110) |
-| **Case narratives** | Not in IB | N/A | **Cannot be populated from IB**<br>Individual case narratives come from safety database |
-| **Search strategies** | Not in IB | N/A | **Cannot be populated from IB**<br>Document safety database and literature search strategies |
-
----
-
-# QUICK REFERENCE GUIDE: MOST COMMONLY USED IB SECTIONS
-
-## For Any Signal Assessment Report:
-
-| Information Need | Primary IB Section | Page Number | Quick Notes |
-|---|---|---|---|
-| **Product name and description** | 1.1 | 15 | RO7499790/pralsetinib/GAVRETO |
-| **Mechanism of action** | 2.3 | 23-24 | RET kinase inhibitor |
-| **Approved indications** | 6.1 | 99 | NSCLC, thyroid cancer |
-| **First approval date** | 1.1 | 15 | September 4, 2020 (US) |
-| **Overall safety summary** | 1.4.3 | 22 | High-level safety overview |
-| **Common adverse events** | Table 23 | 89 | AEs in ≥15% of patients |
-| **Serious adverse events** | Table 26 | 91-92 | SAEs in ≥1% of patients |
-| **Identified risks** | Table 28 | 102-107 | All characterized risks |
-| **Warnings and precautions** | 6.3 | 100-101 | Important safety info |
-| **References** | Section 7 | 115-119 | Sponsor reports and literature |
-
-## Event-Specific Toxicology Mapping:
-
-| If Event Type Is... | Check IB Section | Page Numbers |
-|---|---|---|
-| **Hematologic** (neutropenia, anemia, thrombocytopenia) | 4.3.3.1, Table 30 | 36-37, 107 |
-| **Hepatic** (liver enzyme elevation, hepatotoxicity) | 4.3.3.2, Table 30 | 37-39, 107 |
-| **Renal** (creatinine increase, renal impairment) | 4.3.3.3 | 39-40 |
-| **Reproductive** (teratogenicity, fertility effects) | 4.3.3.4 | 40-42 |
-| **Cardiovascular** | 4.3.3.7, Section 5.5.1.2.3 | 44-45, 92-95 |
-| **Pulmonary** (ILD, pneumonitis) | Section 5.5.1.2.3 | 92-95 |
-| **Hemorrhagic** | Section 5.5.1.2.3 | 92-95 |
-| **Hypertension** | Section 5.5.1.2.3 | 92-95 |
-
-## Event-Specific Clinical Data Mapping:
-
-| If Event Is Identified Risk | IB Section | Page Numbers |
-|---|---|---|
-| **Check if event is in Table 28** | 6.4, Table 28 | 102-107 |
-| **If yes, use risk characterization** | Table 28 | 102-107 |
-| **Also check Warnings** | 6.3 | 100-101 |
-| **Review AESI data** | 5.5.1.2.3 | 92-95 |
-| **Check ADR frequency** | Table 29 | 105-107 |
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_PHARMACOLOGY_DESCRIPTION] | Sections 2.1, 2.3, 4.1.2 | 23-24, 26-29 | AI_SYNTHESIS | **Comprehensive pharmacology**: Synthesize from Section 2.1 (RET kinase background), 2.3 (mechanism), 4.1.2 (oncology pharmacology) |
+| [INSERT_MECHANISM_OF_ACTION] | Section 2.3 | 23-24 | AI_SYNTHESIS | **Primary MOA description**: Selective RET kinase inhibitor mechanism. Synthesize 1-2 paragraphs |
+| [INSERT_MOA_REVIEW] | Sections 2.3, 4.1.2 | 23-24, 26-29 | AI_SYNTHESIS | **Detailed MOA review**: Include target selectivity, downstream effects, cellular mechanisms |
+| [INSERT_FORMULATIONS] | Section 1.2, 3.2.1 | 16-18, 30 | AI_SYNTHESIS | **Available formulations**: Capsule strength, excipients, physical properties |
+| [INSERT_DOSING_INFO] | Sections 1.2.3, 3.2.2 | 18-19, 30-32 | AI_SYNTHESIS | **Dosing regimen**: Recommended dose (400 mg daily), dose modifications, food effects |
+| [INSERT_APPROVED_INDICATIONS] | Section 6.1 | 99 | AI_SYNTHESIS | **List approved indications**: RET fusion-positive NSCLC, RET-altered thyroid cancer (MTC), with patient populations |
+| [INSERT_CLINICAL_TRIAL_EXPOSURE] | Section 5.1 | 46 | AI_SYNTHESIS | **Clinical trial exposure summary**: Total patients, key studies (ARROW, MyTACTIC), study phases |
+| [INSERT_MARKETING_EXPOSURE] | Section 5.6 | 99 | AI_SYNTHESIS | **Post-marketing exposure**: Geographic distribution, estimated patient exposure |
 
 ---
 
-# MAPPING DECISION TREE
+# SECTION 7: BACKGROUND - EVENT OF INTEREST
 
-## Step 1: Determine What Can Be Populated from IB
-
-```
-START HERE
-    |
-    ├─> Need product background info? → YES → Use Sections 1.1, 2.3, 6.1 (p. 15, 23-24, 99)
-    |
-    ├─> Need toxicology data? → YES → Use Section 4.3.3 (p. 33-45)
-    |                                  ├─> Specific organ system → See event-specific table above
-    |
-    ├─> Need clinical study safety? → YES → Use Section 5.5 (p. 87-99)
-    |                                        ├─> ARROW data → 5.5.1 (p. 87-95)
-    |                                        ├─> Common AEs → Table 23 (p. 89)
-    |                                        ├─> Serious AEs → Table 26 (p. 91-92)
-    |                                        ├─> AESI → 5.5.1.2.3 (p. 92-95)
-    |
-    ├─> Is event an identified risk? → YES → Use Section 6.4, Table 28 (p. 102-107)
-    |                                  NO → Limited IB content available
-    |
-    ├─> Need mechanism/plausibility? → YES → Use Sections 2.3, 4.1.2 (p. 23-24, 26-29)
-    |
-    ├─> Need references? → YES → Use Section 7 (p. 115-119)
-    |
-    └─> Need signal source, case narratives, literature review, external databases?
-        → NO → Cannot populate from IB - requires external sources
-```
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_EVENT_CASE_DEFINITION] | Not in IB | N/A | UNAVAILABLE | **Medical definition** from UpToDate, medical dictionaries, or clinical guidelines |
+| [INSERT_EPIDEMIOLOGY_DATA] | Not in IB | N/A | UNAVAILABLE | **Background incidence rates** from published epidemiology literature |
+| [INSERT_BACKGROUND_INCIDENCE] | Not in IB | N/A | UNAVAILABLE | Same as EPIDEMIOLOGY_DATA |
+| [INSERT_BACKGROUND_RATES] | Not in IB | N/A | UNAVAILABLE | Same as EPIDEMIOLOGY_DATA |
+| [INSERT_RISK_FACTORS] | Not in IB | N/A | UNAVAILABLE | **Risk factors for event** from clinical literature, not typically in IB |
+| [INSERT_DIAGNOSIS_TREATMENT] | Not in IB | N/A | UNAVAILABLE | **Clinical management** from medical guidelines |
+| [INSERT_CLASS_EFFECT_INFORMATION] | Section 2.1, limited | 23 | AI_SYNTHESIS | **Check Section 2.1** for RET inhibitor class information. Likely needs external literature search |
+| [INSERT_CLASS_COMPARISON] | Section 2.1, 7.2 | 23, 116-119 | AI_SYNTHESIS | **Limited in IB**: Check Section 2.1 and references. May need external data |
+| [INSERT_INDICATION_COMPARISON] | Not in IB | N/A | UNAVAILABLE | **Event in same indication** requires literature review |
+| [INSERT_COMPARISONS] | Not in IB | N/A | UNAVAILABLE | **Comparative analysis** requires external data |
 
 ---
 
-# IMPORTANT NOTES AND LIMITATIONS
+# SECTION 8: DATA SOURCES AND METHODS
 
-## What the IB CAN Provide:
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_DATA_SOURCES] | Sections 4.3, 5.5, 5.6 | 33-45, 87-99 | AI_SYNTHESIS | **List available data sources**: Nonclinical studies, clinical trials (ARROW, MyTACTIC), post-marketing |
+| [INSERT_SEARCH_START_DATE] | Not in IB | N/A | UNAVAILABLE | **Safety database search start date**. Manual input |
+| [INSERT_SEARCH_END_DATE] | Not in IB | N/A | UNAVAILABLE | **Safety database search end date** (data lock point) |
+| [INSERT_SEARCH_TERMS] | Not in IB | N/A | UNAVAILABLE | **MedDRA search terms used** in safety database query |
+| [INSERT_SEARCH_STRATEGIES] | Not in IB | N/A | UNAVAILABLE | **Detailed search methodology** for safety database |
+| [INSERT_INCLUSION_CRITERIA] | Not in IB | N/A | UNAVAILABLE | **Case inclusion/exclusion criteria** |
+| [INSERT_LIT_SEARCH_DATE] | Not in IB | N/A | UNAVAILABLE | **Literature search date range** |
+| [INSERT_LIT_SEARCH_TERMS] | Not in IB | N/A | UNAVAILABLE | **Literature search terms** (keywords, MeSH terms) |
+| [INSERT_LIT_SEARCH_DETAILS] | Not in IB | N/A | UNAVAILABLE | **Databases searched** (Medline, Embase), search strategy |
+| [INSERT_MEDLINE_DATES] | Not in IB | N/A | UNAVAILABLE | **Medline search date range** |
+| [INSERT_EMBASE_DATES] | Not in IB | N/A | UNAVAILABLE | **Embase search date range** |
 
-✅ Product background and characteristics  
-✅ Mechanism of action and pharmacology  
-✅ Nonclinical toxicology data  
-✅ Clinical trial safety data (aggregate)  
-✅ Identified risks and warnings  
-✅ Post-marketing experience overview  
-✅ References to sponsor reports and key publications  
+---
 
-## What the IB CANNOT Provide:
+# SECTION 9: REVIEW OF NONCLINICAL DATA
 
-❌ Signal detection source/rationale  
-❌ Individual case narratives from safety database  
-❌ Safety database search methodology and results  
-❌ Current literature review (IB references may be dated)  
-❌ External database queries (VigiBase, FAERS, EudraVigilance)  
-❌ Event case definitions (use medical dictionaries, UpToDate)  
-❌ Epidemiology data for events  
-❌ Interpretive discussion and conclusions (IB presents data, not interpretation)  
-❌ Signal assessment determinations  
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_TOXICOLOGY_OVERVIEW] | Section 4.3.1, 4.3.3 | 33-45 | AI_SYNTHESIS | **Comprehensive toxicology summary**: Section 4.3.1 (overview), relevant subsections of 4.3.3 based on event |
+| [INSERT_NONCLINICAL_FINDINGS] | Section 4.3.3 (event-specific) | 33-45 | AI_SYNTHESIS | **Event-specific findings**: 4.3.3.1 (hematotox), 4.3.3.2 (hepatotox), 4.3.3.3 (renal), 4.3.3.4 (reproductive), 4.3.3.5 (genotox), 4.3.3.6 (carcino), 4.3.3.7 (other) |
+| [INSERT_SPECIES_DOSE_INFO] | Section 4.3.1, 4.3.3 | 33-45 | AI_SYNTHESIS | **Species and dose details**: Extract species studied, dose levels, exposure margins from toxicology sections |
 
-## Critical Considerations:
+---
 
-1. **IB Version:** Always cite the IB version and date - this is Version 10, April 2025
+# SECTION 10: REVIEW OF CLINICAL TRIAL DATA
 
-2. **Data Lock Point:** IB data has a specific data lock point - later safety data will not be included
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_OVERALL_SAFETY_SUMMARY] | Section 1.4.3 | 22 | AI_SYNTHESIS | **High-level safety overview**: Extract and synthesize from Section 1.4.3 |
+| [INSERT_KEY_STUDIES_LIST] | Section 5.1, 5.5 | 46, 87-99 | AI_SYNTHESIS | **List key clinical studies**: ARROW (BLU-667-1101), MyTACTIC (ML42439), other relevant studies |
+| [INSERT_CLINICAL_AE_DATA] | Section 5.5.1.2, Tables 23-26 | 87-92 | AI_SYNTHESIS | **Comprehensive AE data**: Overall AE overview, tables of common/serious AEs |
+| [INSERT_COMMON_AES] | Table 23 | 89 | AI_SYNTHESIS | **Common adverse events**: Events in ≥15% of patients from Table 23. Format as list with frequencies |
+| [INSERT_TREATMENT_RELATED_AES] | Table 24 | 90 | AI_SYNTHESIS | **Treatment-related AEs**: From Table 24. Include frequency and grading |
+| [INSERT_GRADE3_PLUS_AES] | Table 25 | 91 | AI_SYNTHESIS | **Grade 3+ adverse events**: From Table 25 (Grade ≥3 in ≥2% of patients) |
+| [INSERT_SERIOUS_AES] | Table 26, Section 5.5.1.2.2 | 91-92 | AI_SYNTHESIS | **Serious adverse events**: Table 26 (SAEs in ≥1%) plus narrative from 5.5.1.2.2 |
+| [INSERT_TOTAL_SAE] | Table 26, Section 5.5.1.2.2 | 91-92 | AI_SYNTHESIS | **Total number or percentage of SAEs**: Extract overall SAE incidence |
+| [INSERT_GRADE4_COUNT] | Section 5.5.1.2 | 87-95 | AI_SYNTHESIS | **Grade 4 events**: Extract count/frequency of Grade 4 AEs if reported |
+| [INSERT_GRADE5_COUNT] | Section 5.5.1.2.4 | 93 | AI_SYNTHESIS | **Deaths (Grade 5)**: From Section 5.5.1.2.4, extract number of deaths and causality |
+| [INSERT_LAB_ABNORMALITIES] | Table 30 | 107 | AI_SYNTHESIS | **Laboratory abnormalities**: From Table 30. Include hematology, chemistry findings, Grade 3-4 changes |
+| [INSERT_SUMMARY_TABLES] | Tables 23-30 | 89-92, 102-107 | AI_SYNTHESIS | **Reference key tables**: List tables included (Tables 23-26 for AEs, Table 30 for labs, Table 28 for risks) |
 
-3. **Identified Risks Only:** The IB provides detailed information on identified risks but may have limited data on novel signals
+---
 
-4. **Aggregate Data:** IB presents pooled/aggregate safety data from studies, not individual case details
+# SECTION 11: REVIEW OF SAFETY DATABASE
 
-5. **Update Frequency:** IB is updated periodically - check if a newer version exists before finalizing report
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_TOTAL_CASES_SUMMARY] | Not in IB | N/A | UNAVAILABLE | **Total cases from safety database** matching search criteria. Requires database query |
+| [INSERT_SPONSORED_TRIAL_CASES] | Not in IB | N/A | UNAVAILABLE | **Cases from sponsored clinical trials** - individual case level data not in IB |
+| [INSERT_NONSPONSORED_TRIAL_CASES] | Not in IB | N/A | UNAVAILABLE | **Cases from non-sponsored trials** |
+| [INSERT_PM_SPONTANEOUS_CASES] | Not in IB | N/A | UNAVAILABLE | **Post-marketing spontaneous reports** |
+| [INSERT_PM_SOLICITED_CASES] | Not in IB | N/A | UNAVAILABLE | **Post-marketing solicited reports** (e.g., PMS studies) |
+| [INSERT_COMPASSIONATE_USE_CASES] | Not in IB | N/A | UNAVAILABLE | **Compassionate use / expanded access cases** |
+| [INSERT_FREQUENT_PTS] | Not in IB | N/A | UNAVAILABLE | **Most frequent Preferred Terms** from database query |
+| [INSERT_CASE_NARRATIVES] | Not in IB | N/A | UNAVAILABLE | **Individual case narratives** for selected cases (Grade 4-5, informative cases) |
+| [INSERT_DETAILED_CASE_NARRATIVES] | Not in IB | N/A | UNAVAILABLE | **Detailed narratives** with patient demographics, dosing, event details, outcome |
 
-6. **Geographic Variations:** IB may not reflect all geographic-specific safety information
+---
+
+# SECTION 12: LITERATURE REVIEW
+
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_LITERATURE_REFERENCES] | Section 7.2 | 116-119 | AI_SYNTHESIS | **Extract references**: List relevant literature references from Section 7.2. Note: IB references may be dated |
+| [INSERT_LITERATURE_RESULTS_SUMMARY] | Section 7.2, limited | 116-119 | AI_SYNTHESIS | **Limited summary possible**: Can list IB references, but comprehensive lit review requires new search |
+| [INSERT_KEY_PUBLICATIONS] | Section 7.2 | 116-119 | AI_SYNTHESIS | **Key publications from IB**: Extract most relevant publications for this event (if mentioned) |
+| [INSERT_SPONSOR_REPORTS] | Section 7.1 | 115-116 | AI_SYNTHESIS | **Sponsor reports list**: Clinical study reports, integrated summaries, regulatory submissions from 7.1 |
+
+---
+
+# SECTION 13: EXTERNAL DATABASE REVIEW
+
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_EXTERNAL_DB_RESULTS] | Not in IB | N/A | UNAVAILABLE | **External database queries**: WHO VigiBase, FAERS, EudraVigilance results |
+| [INSERT_VIGIBASE_RESULTS] | Not in IB | N/A | UNAVAILABLE | **WHO VigiBase query results** |
+| [INSERT_FAERS_RESULTS] | Not in IB | N/A | UNAVAILABLE | **FDA FAERS query results** |
+| [INSERT_EUDRAVIGILANCE_RESULTS] | Not in IB | N/A | UNAVAILABLE | **EudraVigilance query results** |
+| [INSERT_EXTERNAL_DB_REFERENCES] | Not in IB | N/A | UNAVAILABLE | **Citations for external database queries** |
+
+---
+
+# SECTION 14: BIOLOGICAL PLAUSIBILITY
+
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_PHARMACOLOGIC_BASIS] | Sections 2.3, 3.4, 4.1.2 | 23-24, 26-33 | AI_SYNTHESIS | **Mechanistic rationale**: Synthesize from MOA (2.3), clinical pharmacology (3.4), nonclinical pharmacology (4.1.2) |
+| [INSERT_PLAUSIBILITY_ASSESSMENT] | Sections 2.3, 4.3.3, 5.5 | 23-24, 33-45, 87-99 | AI_SYNTHESIS | **Overall plausibility**: Synthesize from MOA, relevant toxicology, related clinical AEs |
+| [INSERT_SUPPORTING_EVIDENCE] | Sections 4.3.3, 5.5.1.2.3 | 33-45, 92-95 | AI_SYNTHESIS | **Evidence supporting link**: Nonclinical findings + related clinical AEs + AESI data |
+
+---
+
+# SECTION 15: DISCUSSION AND ANALYSIS
+
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_FINDINGS_SUMMARY] | Sections 1.4.3, 5.5, 6.4 | 22, 87-99, 102-107 | AI_SYNTHESIS | **Summarize all findings**: Safety summary, clinical data, identified risks |
+| [INSERT_CLINICAL_SIGNIFICANCE] | Section 6.3, 6.4, Table 28 | 100-107 | AI_SYNTHESIS | **Clinical impact**: Extract from Warnings (6.3) and risk characterization (6.4, Table 28) |
+| [INSERT_CLINICAL_IMPACT] | Section 6.3, 6.4 | 100-107 | AI_SYNTHESIS | Same as CLINICAL_SIGNIFICANCE |
+| [INSERT_CLINICAL_RELEVANCE] | Section 6.3, 6.4 | 100-107 | AI_SYNTHESIS | Same as CLINICAL_SIGNIFICANCE |
+| [INSERT_ASSOCIATION_STRENGTH] | Not in IB | N/A | UNAVAILABLE | **Assessment of causality strength**. Requires analysis not provided in IB |
+| [INSERT_EVIDENCE_STRENGTH] | Not in IB | N/A | UNAVAILABLE | **Evidence strength rating** (e.g., strong, moderate, weak). Analytical assessment |
+| [INSERT_DATA_CONSISTENCY] | Not in IB | N/A | UNAVAILABLE | **Consistency across data sources**. Requires comparative analysis |
+| [INSERT_LIMITATIONS] | Not in IB | N/A | UNAVAILABLE | **Limitations of analysis**. Specific to this assessment, not in IB |
+
+---
+
+# SECTION 16: CONCLUSIONS AND RECOMMENDATIONS
+
+| Placeholder | IB Source Section | Pages | Mapping Type | Detailed Instructions |
+|------------|-------------------|-------|--------------|----------------------|
+| [INSERT_OVERALL_ASSESSMENT] | Section 1.4.3, 6.4 | 22, 102-107 | AI_SYNTHESIS | **High-level assessment**: Can extract benefit-risk language from 1.4.3 and 6.4, but final determination requires analysis |
+| [INSERT_SIGNAL_DETERMINATION] | Not in IB | N/A | UNAVAILABLE | **Signal confirmed/refuted/needs monitoring**. Requires analytical decision |
+| [INSERT_RECOMMENDATIONS] | Section 6.3, 6.4 (partial) | 100-107 | AI_SYNTHESIS | **Can extract current risk management** from 6.3/6.4, but new recommendations require analysis |
+| [INSERT_RISK_MANAGEMENT] | Section 6.3, 6.4, Table 28 | 100-107 | AI_SYNTHESIS | **Current risk management**: Extract from Warnings (6.3) and risk mitigation (Table 28) |
+| [INSERT_REGULATORY_ACTIONS] | Not in IB | N/A | UNAVAILABLE | **Proposed regulatory actions**. Decision not in IB |
+| [INSERT_NEXT_REVIEW_DATE] | Not in IB | N/A | UNAVAILABLE | **Date for next review**. Manual determination |
+
+---
+
+# MAPPING STATISTICS SUMMARY
+
+**Total Placeholders:** 106
+
+**By Mapping Type:**
+- DIRECT_EXTRACT: 12 fields (11%)
+- AI_SYNTHESIS: 51 fields (48%)
+- UNAVAILABLE: 43 fields (41%)
+
+**Can Populate from IB:** 63 fields (59%)
+**Require External Data:** 43 fields (41%)
+
+---
+
+# EXTRACTION PRIORITY GUIDE
+
+## Priority 1: Direct Extract (Fastest, No AI Needed)
+Process these first - simple text extraction:
+- Product identification (drug name, RO number, trade name)
+- IB version and dates
+- Approval date (IBD)
+- Company name
+
+## Priority 2: AI Synthesis (Core Content)
+Process with OpenAI - requires synthesis/summarization:
+- Product background and pharmacology
+- Clinical trial safety data
+- Toxicology summaries
+- Mechanism of action
+- Approved indications
+- Biological plausibility
+- Clinical significance
+
+## Priority 3: Unavailable (Skip/Placeholder)
+Mark with "Cannot populate from IB - requires [source]":
+- Signal source and assessment rationale
+- Safety database query results
+- Individual case narratives
+- Literature review results
+- External database queries
+- Epidemiology data
+- Final conclusions and recommendations
+
+---
+
+# EVENT-SPECIFIC TOXICOLOGY MAPPING
+
+When populating [INSERT_NONCLINICAL_FINDINGS], use this guide:
+
+| Event Type | Primary IB Section | Page Numbers |
+|------------|-------------------|--------------|
+| Hematologic (neutropenia, anemia, thrombocytopenia) | 4.3.3.1 | 36-37 |
+| Hepatic (ALT/AST elevation, hepatotoxicity) | 4.3.3.2 | 37-39 |
+| Renal (creatinine increase, renal toxicity) | 4.3.3.3 | 39-40 |
+| Reproductive/teratogenic | 4.3.3.4 | 40-42 |
+| Genotoxicity/mutagenicity | 4.3.3.5 | 42-43 |
+| Carcinogenicity | 4.3.3.6 | 43-44 |
+| Cardiovascular/pulmonary/other | 4.3.3.7 | 44-45 |
+
+---
+
+# EVENT-SPECIFIC CLINICAL DATA MAPPING
+
+When populating clinical AE fields for specific event:
+
+**Step 1:** Check if event is identified risk
+- Look in Table 28 (p. 102-107)
+- If YES: Extract comprehensive information from Table 28 + Section 6.3
+
+**Step 2:** Check Adverse Events of Special Interest (AESI)
+- Section 5.5.1.2.3 (p. 92-95)
+- May have detailed monitoring data
+
+**Step 3:** Check aggregate AE tables
+- Table 23: Common AEs (≥15%)
+- Table 24: Treatment-related AEs
+- Table 25: Grade ≥3 AEs
+- Table 26: Serious AEs
+
+**Step 4:** Check laboratory data if relevant
+- Table 30 (p. 107): Laboratory abnormalities
+
+---
+
+# AI SYNTHESIS INSTRUCTIONS
+
+For fields marked AI_SYNTHESIS, provide OpenAI with:
+
+**Context:**
+- Field name and purpose
+- Target audience (regulatory, medical professionals)
+- Desired length (brief/moderate/comprehensive)
+
+**Source Material:**
+- Extracted text from specified IB sections
+- Page numbers for reference
+
+**Instructions:**
+- "Synthesize the following content from the IB into a [brief/comprehensive] summary for [field purpose]"
+- "Maintain scientific accuracy and regulatory tone"
+- "Focus on [specific aspects relevant to field]"
+- "Format as [paragraph/bullet points/table] as appropriate"
+
+**Quality Checks:**
+- Content is scientifically accurate
+- All claims are supported by IB source
+- Appropriate level of detail for field
+- Professional regulatory writing style
+- No speculation beyond IB content
 
 ---
 
 # VALIDATION CHECKLIST
 
-When using this mapping to populate a Signal Assessment Report:
+Before finalizing populated DSR:
 
-- [ ] Cited correct IB version (Version 10, April 2025)
-- [ ] Checked if event is an identified risk in Table 28
-- [ ] Extracted relevant toxicology data from Section 4.3.3
-- [ ] Included appropriate clinical trial safety data from Section 5.5
-- [ ] Reviewed AESI section if event is monitored (Section 5.5.1.2.3)
-- [ ] Incorporated mechanism/pharmacology for biological plausibility
-- [ ] Used appropriate IB references from Section 7
-- [ ] Noted limitations of IB data (data lock point, aggregate nature)
-- [ ] Supplemented with current literature search (IB alone insufficient)
-- [ ] Supplemented with safety database case-level data
-- [ ] Added external database queries as needed
-- [ ] Provided interpretive analysis beyond IB data presentation
+**IB Content (AI Synthesis):**
+- [ ] All AI-synthesized content verified against source sections
+- [ ] Product identification fields accurate
+- [ ] Mechanism of action correctly described
+- [ ] Clinical trial data accurately summarized
+- [ ] Toxicology findings relevant to event
+- [ ] Identified risks properly characterized
+- [ ] All page references correct
+
+**External Content (Manual Input):**
+- [ ] Signal source documented
+- [ ] Safety database search performed and results added
+- [ ] Case narratives added for key cases
+- [ ] Literature review completed and current
+- [ ] External database queries performed
+- [ ] Epidemiology data obtained
+- [ ] Final assessment and recommendations completed
+
+**Document Quality:**
+- [ ] All placeholders replaced (no [INSERT_*] remaining)
+- [ ] Formatting preserved
+- [ ] Tables and figures properly referenced
+- [ ] Internal consistency checked
+- [ ] References complete and formatted
+- [ ] Medical and regulatory review completed
 
 ---
 
-# VERSION CONTROL
+# IMPORTANT LIMITATIONS
 
-**Version 1.0 - November 2024**
-- Initial comprehensive mapping created
-- Mapped to IB Version 10 (April 2025)
-- All sections and page numbers verified
+## What This Mapping CAN Provide:
+✅ Comprehensive product background from IB  
+✅ Complete nonclinical safety data  
+✅ Aggregate clinical trial safety data  
+✅ Mechanism of action and pharmacology  
+✅ Currently identified risks and warnings  
+✅ References to source documents  
 
-**Future Updates Needed When:**
-- IB Version 11 or later is released
-- Template structure changes
-- New identified risks are added to IB Section 6.4
-- New clinical studies are added to IB Section 5
+## What This Mapping CANNOT Provide:
+❌ Signal detection methodology and rationale  
+❌ Individual case-level data from safety database  
+❌ Current literature review (IB references may be dated)  
+❌ Real-time post-marketing data  
+❌ External database queries (VigiBase, FAERS)  
+❌ Epidemiological background data  
+❌ Final signal assessment determination  
+❌ Regulatory recommendations  
+
+## Critical Notes:
+
+1. **IB Data Lock Point**: IB has a specific data lock date. Safety data after this date will not be included.
+
+2. **Identified Risks**: IB provides excellent information for events already identified as risks (Table 28). Novel signals will have limited information.
+
+3. **Aggregate vs. Individual**: IB presents pooled clinical trial data, not individual case details needed for case narratives.
+
+4. **Medical Review Required**: All AI-synthesized content must be reviewed by qualified medical/scientific personnel.
+
+5. **Regulatory Completeness**: IB content alone is insufficient for complete signal assessment. External data sources are essential.
+
+---
+
+# VERSION HISTORY
+
+**Version 2.0 - December 2024**
+- Complete mapping for new DSR template (106 placeholders)
+- Categorized all fields by mapping type
+- Added detailed AI synthesis instructions
+- Included event-specific guidance
+- Added validation checklist
+
+**Future Updates:**
+- Update when IB Version 11+ released
+- Modify if DSR template structure changes
+- Refine AI synthesis prompts based on output quality
 
 ---
 
 **END OF MAPPING DOCUMENT**
+
+

@@ -10,7 +10,7 @@ All components created, tested, and validated.
 
 ### 1. Core Mapping File (The Heart of the System)
 
-**`IB_to_NewDSR_Mapping.md`** (26 KB)
+**`IB_to_DSR_Mapping.md`** (26 KB)
 - **114 fields** comprehensively mapped
 - **100% coverage** of new DSR template
 - **3 mapping types** clearly categorized:
@@ -58,7 +58,7 @@ All components created, tested, and validated.
 - Expected results summary
 - Key file reference
 
-**`NEW_TEMPLATE_GUIDE.md`** (13 KB)
+**`GUIDE.md`** (13 KB)
 - Comprehensive reference guide
 - Field-by-field breakdown
 - Customization options
@@ -78,7 +78,7 @@ All components created, tested, and validated.
 
 ### 4. Testing & Validation
 
-**`test_new_template.py`** (8.7 KB)
+**`test.py`** (8.7 KB)
 - Automated validation suite
 - Tests mapping coverage (100%)
 - Validates mapping quality
@@ -151,8 +151,8 @@ export OPENAI_API_KEY=sk-your-api-key-here
 # 2. Run the pipeline
 python main.py \
   --ib-pdf investigative_brochure.pdf \
-  --template new_DSR_template.docx \
-  --mapping IB_to_NewDSR_Mapping.md \
+  --template DSR_template.docx \
+  --mapping IB_to_DSR_Mapping.md \
   --output data/output/DSR_Populated.docx
 
 # 3. Review output
@@ -164,7 +164,7 @@ python main.py \
 
 ```bash
 # Test that everything is set up correctly
-python test_new_template.py
+python test.py
 ```
 
 ---
@@ -215,8 +215,8 @@ python test_new_template.py
 safety_report_IB_populated/
 │
 ├── Core Mapping & Template
-│   ├── IB_to_NewDSR_Mapping.md       ⭐ Main mapping file
-│   ├── new_DSR_template.docx         ⭐ Target template
+│   ├── IB_to_DSR_Mapping.md       ⭐ Main mapping file
+│   ├── DSR_template.docx         ⭐ Target template
 │   └── investigative_brochure.pdf    ⭐ Source IB
 │
 ├── System Components
@@ -230,12 +230,12 @@ safety_report_IB_populated/
 │
 ├── Documentation (NEW)
 │   ├── QUICK_START_NEW_TEMPLATE.md  ⭐ Quick start guide
-│   ├── NEW_TEMPLATE_GUIDE.md        ⭐ Comprehensive guide
+│   ├── GUIDE.md        ⭐ Comprehensive guide
 │   ├── IMPLEMENTATION_SUMMARY.md    ⭐ Implementation details
 │   └── DELIVERABLES.md              ⭐ This file
 │
 ├── Testing (NEW)
-│   └── test_new_template.py         ⭐ Validation suite
+│   └── test.py         ⭐ Validation suite
 │
 └── Output (Created by pipeline)
     └── data/
@@ -272,10 +272,10 @@ safety_report_IB_populated/
 ### Getting Help
 
 1. **Quick reference:** `QUICK_START_NEW_TEMPLATE.md`
-2. **Detailed help:** `NEW_TEMPLATE_GUIDE.md`
+2. **Detailed help:** `GUIDE.md`
 3. **Implementation details:** `IMPLEMENTATION_SUMMARY.md`
-4. **Field-specific info:** `IB_to_NewDSR_Mapping.md`
-5. **Validate setup:** Run `python test_new_template.py`
+4. **Field-specific info:** `IB_to_DSR_Mapping.md`
+5. **Validate setup:** Run `python test.py`
 
 ---
 
@@ -353,7 +353,7 @@ Before finalizing any DSR:
 
 1. ✅ **Run test suite**
    ```bash
-   python test_new_template.py
+   python test.py
    ```
 
 2. ✅ **Set OpenAI API key**
@@ -364,8 +364,8 @@ Before finalizing any DSR:
 3. ✅ **Run pipeline**
    ```bash
    python main.py --ib-pdf investigative_brochure.pdf \
-                  --template new_DSR_template.docx \
-                  --mapping IB_to_NewDSR_Mapping.md \
+                  --template DSR_template.docx \
+                  --mapping IB_to_DSR_Mapping.md \
                   --output data/output/DSR_Populated.docx
    ```
 
@@ -404,7 +404,7 @@ You now have a **complete, production-ready system** that can:
 
 - [ ] Install Python dependencies (`pip install -r requirements.txt`)
 - [ ] Set OpenAI API key (environment variable or command line)
-- [ ] Run test validation (`python test_new_template.py`)
+- [ ] Run test validation (`python test.py`)
 - [ ] Verify all tests pass (should show 100% coverage)
 - [ ] Run full pipeline with your IB and template
 - [ ] Review populated template output
@@ -418,8 +418,9 @@ You now have a **complete, production-ready system** that can:
 **System Version:** 2.0  
 **Status:** ✅ Production Ready  
 **Date:** December 1, 2024  
-**Template:** new_DSR_template.docx (114 fields)  
+**Template:** DSR_template.docx (114 fields)  
 **IB Reference:** Version 10, April 2025  
 
 **Ready to use! Just set your API key and run the pipeline.** 🚀
+
 

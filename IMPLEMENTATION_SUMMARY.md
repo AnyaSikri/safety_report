@@ -9,7 +9,7 @@ All tasks completed and validated. The system is production-ready.
 ## What Was Created
 
 ### 1. Comprehensive Mapping File
-**File:** `IB_to_NewDSR_Mapping.md` (379 lines)
+**File:** `IB_to_DSR_Mapping.md` (379 lines)
 
 - **114 fields** mapped from new DSR template to Investigator Brochure
 - **Rigorous categorization:**
@@ -39,7 +39,7 @@ All tasks completed and validated. The system is production-ready.
 
 ### 3. Documentation Suite
 
-**NEW_TEMPLATE_GUIDE.md** (comprehensive reference)
+**GUIDE.md** (comprehensive reference)
 - Detailed explanation of all 114 fields
 - AI synthesis instructions
 - Event-specific mapping guidance
@@ -53,7 +53,7 @@ All tasks completed and validated. The system is production-ready.
 - Common troubleshooting
 - Key file locations
 
-**test_new_template.py** (validation script)
+**test.py** (validation script)
 - Automated testing of mapping coverage
 - Quality validation
 - Summary statistics
@@ -102,8 +102,8 @@ export OPENAI_API_KEY=sk-your-api-key-here
 # 2. Run the pipeline
 python main.py \
   --ib-pdf investigative_brochure.pdf \
-  --template new_DSR_template.docx \
-  --mapping IB_to_NewDSR_Mapping.md \
+  --template DSR_template.docx \
+  --mapping IB_to_DSR_Mapping.md \
   --output data/output/DSR_Populated.docx
 ```
 
@@ -297,19 +297,19 @@ Output + Reports
 - `src/template_populator.py` - Word template population
 
 ### Mapping & Template
-- `IB_to_NewDSR_Mapping.md` - **MAIN MAPPING** (114 fields)
-- `new_DSR_template.docx` - **TARGET TEMPLATE**
+- `IB_to_DSR_Mapping.md` - **MAIN MAPPING** (114 fields)
+- `DSR_template.docx` - **TARGET TEMPLATE**
 - `investigative_brochure.pdf` - **SOURCE IB**
 
 ### Documentation
 - `QUICK_START_NEW_TEMPLATE.md` - Quick start guide
-- `NEW_TEMPLATE_GUIDE.md` - Comprehensive guide
+- `GUIDE.md` - Comprehensive guide
 - `IMPLEMENTATION_SUMMARY.md` - This file
 - `README_AUTOMATION.md` - Original system docs
 
 ### Testing
-- `test_new_template.py` - Validation test suite
-- Run with: `python test_new_template.py`
+- `test.py` - Validation test suite
+- Run with: `python test.py`
 
 ---
 
@@ -336,7 +336,7 @@ Output + Reports
 
 Current versions:
 - **Mapping:** v2.0 (December 2024)
-- **Template:** new_DSR_template.docx (114 fields)
+- **Template:** DSR_template.docx (114 fields)
 - **IB Reference:** Version 10, April 2025
 - **System:** Production-ready
 
@@ -359,7 +359,7 @@ Current versions:
 ### Immediate Use
 
 1. ✅ **System is ready** - No additional setup needed
-2. ✅ **Run test** - `python test_new_template.py` (validates everything)
+2. ✅ **Run test** - `python test.py` (validates everything)
 3. ✅ **Run pipeline** - Use quick start command
 4. ✅ **Review output** - Check AI synthesis quality
 5. ✅ **Fill manual fields** - Add external data
@@ -378,11 +378,11 @@ Current versions:
 
 ### Quick Reference
 1. `QUICK_START_NEW_TEMPLATE.md` - Fast setup
-2. `python test_new_template.py` - Validation
+2. `python test.py` - Validation
 
 ### Detailed Help
-1. `NEW_TEMPLATE_GUIDE.md` - Complete guide
-2. `IB_to_NewDSR_Mapping.md` - Field-by-field mapping
+1. `GUIDE.md` - Complete guide
+2. `IB_to_DSR_Mapping.md` - Field-by-field mapping
 
 ### Troubleshooting
 1. Check test output
@@ -412,4 +412,5 @@ Current versions:
 **Version:** 2.0  
 **Test Status:** ✅ All Tests Passed  
 **Coverage:** 100% (114/114 fields)
+
 

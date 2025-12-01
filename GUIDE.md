@@ -14,8 +14,8 @@ The system can now automatically populate **56 out of 114 fields (49%)** from th
 ### Required Files
 
 1. **IB PDF**: `investigative_brochure.pdf`
-2. **New Template**: `new_DSR_template.docx` (106 placeholders)
-3. **Mapping File**: `IB_to_NewDSR_Mapping.md` (comprehensive mapping created)
+2. **New Template**: `DSR_template.docx` (106 placeholders)
+3. **Mapping File**: `IB_to_DSR_Mapping.md` (comprehensive mapping created)
 4. **OpenAI API Key**: Required for AI synthesis fields
 
 ### Output Files Created
@@ -68,8 +68,8 @@ export OPENAI_API_KEY=sk-your-api-key-here
 ```bash
 python main.py \
   --ib-pdf investigative_brochure.pdf \
-  --template new_DSR_template.docx \
-  --mapping IB_to_NewDSR_Mapping.md \
+  --template DSR_template.docx \
+  --mapping IB_to_DSR_Mapping.md \
   --output data/output/DSR_Populated.docx
 ```
 
@@ -78,8 +78,8 @@ python main.py \
 ```bash
 python main.py \
   --ib-pdf investigative_brochure.pdf \
-  --template new_DSR_template.docx \
-  --mapping IB_to_NewDSR_Mapping.md \
+  --template DSR_template.docx \
+  --mapping IB_to_DSR_Mapping.md \
   --output data/output/DSR_Populated.docx \
   --force-reindex \
   --index-path data/intermediate/ib_index.json \
@@ -268,7 +268,7 @@ Edit `src/content_matcher.py` method `_create_extraction_prompt()` to customize:
 
 ### Modify Mapping
 
-Edit `IB_to_NewDSR_Mapping.md` to:
+Edit `IB_to_DSR_Mapping.md` to:
 - Add new field mappings
 - Change mapping types (DIRECT_EXTRACT → AI_SYNTHESIS)
 - Update IB section references
@@ -299,7 +299,7 @@ python main.py --force-reindex [other args...]
 **Cause:** Placeholder text is split across Word formatting
 
 **Solution:**
-1. Open `new_DSR_template.docx`
+1. Open `DSR_template.docx`
 2. Find the placeholder manually
 3. Delete and retype as continuous text
 4. Re-run pipeline
@@ -449,7 +449,7 @@ If NOT in Table 28, you'll need more external data.
 
 ### File Locations
 
-- **Mapping**: `IB_to_NewDSR_Mapping.md`
+- **Mapping**: `IB_to_DSR_Mapping.md`
 - **Parser**: `src/mapping_parser.py`
 - **Content Matcher**: `src/content_matcher.py`
 - **Prompts**: In `content_matcher.py` method `_create_extraction_prompt()`
@@ -475,6 +475,7 @@ This automation system provides:
 
 **Last Updated:** December 2024  
 **Mapping Version:** 2.0  
-**Template:** new_DSR_template.docx  
+**Template:** DSR_template.docx  
 **IB Version:** Version 10, April 2025
+
 
