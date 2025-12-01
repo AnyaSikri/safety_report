@@ -221,10 +221,16 @@ class IBIndexer:
         # Build hierarchical section structure
         hierarchical_sections = self._build_hierarchical_sections()
         
+        # Create page content dictionary for easy lookup
+        page_content = {}
+        for page_num, text in self.extracted_text:
+            page_content[page_num] = text
+        
         index = {
             'metadata': metadata,
             'sections': hierarchical_sections,
             'tables': self.tables,
+            'page_content': page_content,
             'total_pages': len(self.extracted_text)
         }
         
@@ -292,10 +298,16 @@ class IBIndexer:
         if not self.sections:
             index = self.create_index()
         else:
+            # Create page content dictionary for easy lookup
+            page_content = {}
+            for page_num, text in self.extracted_text:
+                page_content[page_num] = text
+            
             index = {
                 'metadata': self._extract_metadata(),
                 'sections': self._build_hierarchical_sections(),
                 'tables': self.tables,
+                'page_content': page_content,
                 'total_pages': len(self.extracted_text)
             }
         

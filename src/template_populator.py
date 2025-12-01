@@ -87,6 +87,9 @@ class TemplatePopulator:
         if not new_content:
             new_content = "[NO CONTENT]"
         
+        # Clean up content - remove excessive whitespace but preserve single line breaks
+        new_content = self._clean_content(new_content)
+        
         replacements_made = 0
         
         # Replace in paragraphs
@@ -116,9 +119,33 @@ class TemplatePopulator:
         
         return replacements_made
     
+    def _clean_content(self, content: str) -> str:
+        """
+        Clean content before insertion
+        
+        Args:
+            content: Raw content string
+            
+        Returns:
+            Cleaned content string
+        """
+        if not content:
+            return ""
+        
+        # Remove excessive whitespace (multiple spaces/tabs)
+        content = re.sub(r'[ \t]+', ' ', content)
+        
+        # Normalize line breaks - convert multiple newlines to double newline (paragraph break)
+        content = re.sub(r'\n{3,}', '\n\n', content)
+        
+        # Remove trailing/leading whitespace
+        content = content.strip()
+        
+        return content
+    
     def _replace_in_paragraph(self, paragraph, old_text: str, new_text: str) -> int:
         """
-        Replace text in paragraph while attempting to preserve formatting
+        Replace text in paragraph while preserving formatting
         
         Args:
             paragraph: python-docx Paragraph object
@@ -131,28 +158,78 @@ class TemplatePopulator:
         if old_text not in paragraph.text:
             return 0
         
-        # Try to preserve formatting by working with runs
-        # This is complex in python-docx, so we use a simplified approach
+        # Build a list of run texts to find where placeholder is
+        runs = paragraph.runs
+        if not runs:
+            return 0
         
-        # Get full text
-        full_text = paragraph.text
+        # Try to find which run(s) contain the placeholder
+        for i, run in enumerate(runs):
+            if old_text in run.text:
+                # Placeholder is entirely in this run - simple case
+                run.text = run.text.replace(old_text, new_text, 1)
+                return 1
         
-        # Check if placeholder exists
+        # Placeholder might be split across runs
+        # Reconstruct full text and find position
+        full_text = ''.join(run.text for run in runs)
+        
         if old_text not in full_text:
             return 0
         
-        # Replace text
-        new_full_text = full_text.replace(old_text, new_text)
+        # Find the placeholder position
+        placeholder_start = full_text.index(old_text)
+        placeholder_end = placeholder_start + len(old_text)
         
-        # Clear existing runs
-        for run in paragraph.runs:
-            run.text = ''
+        # Calculate new text
+        new_full_text = full_text[:placeholder_start] + new_text + full_text[placeholder_end:]
         
-        # Add new text as a single run
-        if paragraph.runs:
-            paragraph.runs[0].text = new_full_text
-        else:
+        # Find which runs the placeholder spans
+        current_pos = 0
+        start_run_idx = -1
+        end_run_idx = -1
+        
+        for i, run in enumerate(runs):
+            run_len = len(run.text)
+            if current_pos <= placeholder_start < current_pos + run_len:
+                start_run_idx = i
+            if current_pos < placeholder_end <= current_pos + run_len:
+                end_run_idx = i
+            current_pos += run_len
+        
+        if start_run_idx == -1 or end_run_idx == -1:
+            # Fallback: clear all and replace
+            paragraph.clear()
             paragraph.add_run(new_full_text)
+            return 1
+        
+        # Replace the text while preserving runs outside the placeholder
+        if start_run_idx == end_run_idx:
+            # Placeholder in single run
+            run = runs[start_run_idx]
+            run.text = run.text.replace(old_text, new_text, 1)
+        else:
+            # Placeholder spans multiple runs - merge and replace
+            # Keep the first run's formatting, remove the others
+            position_in_text = 0
+            for i in range(len(runs)):
+                run_len = len(runs[i].text)
+                if i < start_run_idx:
+                    position_in_text += run_len
+                elif i == start_run_idx:
+                    # This run starts before or at placeholder
+                    start_offset = placeholder_start - position_in_text
+                    runs[i].text = runs[i].text[:start_offset] + new_text
+                    position_in_text += run_len
+                elif start_run_idx < i < end_run_idx:
+                    # This run is completely within placeholder - clear it
+                    runs[i].text = ''
+                    position_in_text += run_len
+                elif i == end_run_idx:
+                    # This run contains end of placeholder
+                    end_offset = placeholder_end - position_in_text
+                    runs[i].text = runs[i].text[end_offset:]
+                    position_in_text += run_len
         
         return 1
     

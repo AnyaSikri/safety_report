@@ -37,44 +37,71 @@ class MappingParser:
             content = f.read()
         
         # Extract mapping tables from markdown
-        # Look for table rows with format: | DSR Field | IB Section | Pages | Notes |
+        # Look for table rows with format: | Placeholder | IB Section | Pages | Mapping Type | Instructions |
         mappings = {}
         
         # Find all table rows (lines starting with |)
-        table_row_pattern = re.compile(r'\|([^|]+)\|([^|]+)\|([^|]+)\|([^|]*)\|')
+        # Handle both 4-column and 5-column format
+        table_row_pattern_5col = re.compile(r'\|([^|]+)\|([^|]+)\|([^|]+)\|([^|]+)\|([^|]*)\|')
+        table_row_pattern_4col = re.compile(r'\|([^|]+)\|([^|]+)\|([^|]+)\|([^|]*)\|')
         
         for line in content.split('\n'):
-            match = table_row_pattern.match(line)
+            # Try 5-column format first (new format)
+            match = table_row_pattern_5col.match(line)
             if match:
                 field = match.group(1).strip()
                 ib_section = match.group(2).strip()
                 pages = match.group(3).strip()
-                notes = match.group(4).strip()
-                
-                # Skip header rows and separator rows
-                if field in ['DSR Template Field', 'DSR Field', '---', '']:
+                mapping_type_col = match.group(4).strip()
+                notes = match.group(5).strip()
+            else:
+                # Try 4-column format (old format)
+                match = table_row_pattern_4col.match(line)
+                if match:
+                    field = match.group(1).strip()
+                    ib_section = match.group(2).strip()
+                    pages = match.group(3).strip()
+                    mapping_type_col = ""
+                    notes = match.group(4).strip()
+                else:
                     continue
-                if '---' in field or '===' in field:
-                    continue
+            
+            # Skip header rows and separator rows
+            if field in ['DSR Template Field', 'DSR Field', 'Placeholder', 'Template Field/Content', '---', '']:
+                continue
+            if '---' in field or '===' in field:
+                continue
+            if 'Mapping Type' in mapping_type_col or '---' in mapping_type_col:
+                continue
+            
+            # Look for placeholder pattern [INSERT_*]
+            placeholder_match = re.search(r'\[INSERT_[A-Z0-9_]+\]', field)
+            if placeholder_match:
+                placeholder = placeholder_match.group(0)
                 
-                # Look for placeholder pattern [INSERT_*]
-                placeholder_match = re.search(r'\[INSERT_[A-Z0-9_]+\]', field)
-                if placeholder_match:
-                    placeholder = placeholder_match.group(0)
-                    
-                    # Parse page numbers
-                    page_list = self._parse_pages(pages)
-                    
-                    # Determine mapping type
+                # Parse page numbers
+                page_list = self._parse_pages(pages)
+                
+                # Determine mapping type - prefer explicit column, fallback to determination
+                if mapping_type_col and mapping_type_col.upper() in ['DIRECT_EXTRACT', 'AI_SYNTHESIS', 'UNAVAILABLE']:
+                    # Normalize to our internal format
+                    if mapping_type_col.upper() == 'DIRECT_EXTRACT':
+                        mapping_type = 'direct_extract'
+                    elif mapping_type_col.upper() == 'AI_SYNTHESIS':
+                        mapping_type = 'synthesis_required'
+                    else:
+                        mapping_type = 'unavailable'
+                else:
+                    # Determine from content
                     mapping_type = self._determine_mapping_type(ib_section, notes)
-                    
-                    mappings[placeholder] = {
-                        'field_description': field.replace(placeholder, '').strip(' -:'),
-                        'ib_section': ib_section,
-                        'ib_pages': page_list,
-                        'mapping_type': mapping_type,
-                        'notes': notes
-                    }
+                
+                mappings[placeholder] = {
+                    'field_description': field.replace(placeholder, '').strip(' -:'),
+                    'ib_section': ib_section,
+                    'ib_pages': page_list,
+                    'mapping_type': mapping_type,
+                    'notes': notes
+                }
         
         self.mapping_dict = mappings
         print(f"✓ Parsed {len(mappings)} field mappings")
@@ -132,6 +159,14 @@ class MappingParser:
         section_lower = ib_section.lower()
         notes_lower = notes.lower()
         
+        # Check for explicit mapping type labels (new format)
+        if 'direct_extract' in notes_lower or '**direct_extract**' in notes.lower():
+            return 'direct_extract'
+        if 'ai_synthesis' in notes_lower or '**ai_synthesis**' in notes.lower():
+            return 'synthesis_required'
+        if 'unavailable' in notes_lower or '**unavailable**' in notes.lower():
+            return 'unavailable'
+        
         # Check for unavailable/external data needed
         unavailable_keywords = [
             'not in ib',
@@ -140,7 +175,9 @@ class MappingParser:
             'case report',
             'requires query',
             'not available',
-            'n/a'
+            'cannot be populated from ib',
+            'manual input',
+            'requires external data'
         ]
         
         for keyword in unavailable_keywords:
@@ -150,11 +187,13 @@ class MappingParser:
         # Check for synthesis needed
         synthesis_keywords = [
             'synthesis',
+            'synthesize',
             'combine',
             'summarize',
             'multiple sections',
             'rewrite',
-            'adapt'
+            'adapt',
+            'extract from'
         ]
         
         for keyword in synthesis_keywords:

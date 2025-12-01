@@ -299,9 +299,19 @@ Output the extracted/synthesized content only, with no preamble or explanation."
         Returns:
             List of page content strings
         """
-        # Note: In the real implementation, we'd need to store page text in the index
-        # For now, return a placeholder
-        return [f"[Content from page {p}]" for p in page_numbers[:3]]  # Limit to first 3 pages
+        page_content_dict = self.ib_index.get('page_content', {})
+        
+        if not page_content_dict:
+            return [f"[Content from page {p} not available in index]" for p in page_numbers[:5]]
+        
+        content = []
+        for page_num in page_numbers[:10]:  # Limit to first 10 pages to avoid token limits
+            # Page numbers might be stored as strings or ints
+            page_text = page_content_dict.get(page_num) or page_content_dict.get(str(page_num))
+            if page_text:
+                content.append(page_text)
+        
+        return content
     
     def handle_unavailable_field(self, field_name: str, mapping_info: Dict) -> str:
         """
